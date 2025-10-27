@@ -14,7 +14,6 @@
 
 [Metabolic coupling between soil aerobic methanotrophs and denitrifiers in rice paddy fields](https://doi.org/10.1038/s41467-024-47827-y)
 
-
 [Global stable-isotope tracing metabolomics reveals system-wide metabolic alternations in aging Drosophila](https://doi.org/10.1038/s41467-022-31268-6)
 
 [Metabolites are not genes — avoiding the misuse of pathway analysis in metabolomics](https://doi.org/10.1038/s42255-025-01283-0)
