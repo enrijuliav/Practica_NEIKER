@@ -12,6 +12,8 @@ Además de este asunto, también he tenido mi aprendizaje y dificultades particu
 
 A este problema se le sumó el hecho de que la metabolómica está bastante más atrasada que el resto de ómicas. Quizá sea por su naturaleza de estudio, ya que mientras que la proteómica y la genómica estudian secuencias de proteínas o ácidos nucléicos con estructuras bastante fijas y definidas, la metabolómica estudia la presencia y cantidad de diferentes metabolitos y sus interacciones, lo que es bastante más complicado de estudiar conceptual y realistamente, al haber una gran parte de confusión y ruido al pasar de secuencias de proteínas a metabolitos. Esto implica que hay pocas bases de datos de las que extraer información, hay pocos estudios que construyan unos sobre otros, superponiendo información y creando algo similar al genoma humano, por ejemplo. Por el momento solo tenemos bases de datos que contienen los resultados experimentales de cada grupo de investigación si eso.
 
+Otro problema que surgió fue la mala replicabilidad de los papers. Una tendencia general de estos papers es de disponer de una mala replicabilidad, habiendo una falta, no solo del código empleado en sí, sino de versiones, parámetros y técnicas que osn esenciales para la obtención de los datos.
+
 \section{Article:}
 
 Metabolic coupling between soil aerobic methanotrophs and denitriﬁers in rice paddy ﬁelds
@@ -50,19 +52,37 @@ Some metanotrophs were capable of partial denirification. \textbf{Hypothesis: Mi
 
 \section{Methods}
 
-Field survey
+\subsection{Field survey}
 
-$^{13}$CH$_4$-DNA-stable isotope probing (SIP)
+\subsection{$^{13}$CH$_4$-DNA-stable isotope probing (SIP)}
 
-Microcosm experiments
+DNA-SIP is a technique used to identify active microorganisms that assimilate particular carbon nutrients into cellular biomass.
 
-$^{13}$C-metagenome-assembled genoms
+You first start by incubating an environmental sambple with the stable isotope labelled compound, $^{13}$CH$_4$ in this case. Then you extract and purify the DNA, which lets you retrieve the labelled and unlabelled DNA for subsequent moelcular characterization.
 
-$^{13}$C-metabolomics: intermediates derived form $^{13}$CH$_4$.
+\subsection{Microcosm experiments}
 
-Stat analysis
+Microcosms are artificial, simplified ecosystems that are used to simulate and predict the behaviour of natural ecosystems under controlled conditions. Open or closed microcosms provide an experimental area for ecologists to study natural ecological processes.
+
+\subsection{$^{13}$C-metagenome-assembled genoms}
+
+\subsection{$^{13}$C-metabolomics}
+
+Intermediates derived form $^{13}$CH$_4$.
+
+\subsection{Stat analysis}
 
 \section{Results}
+
+\textbf{Relation between microbial CH4 oxidation and denitriﬁcation in 	ﬁeld survey:} Wide variation in denitrification and methane oxidation activities and the abundance or its genes across China. A signiﬁcant and positive relationship between denitriﬁcation rate and CH$_4$-oxidizing activity. Postitive correlation between \textit{pmoA} (methane monooxigenase) and \textit{nirK} and \textit{nirS}. The structural equation modeling (SEM) reconfirmed those results. Correlation network analyses indicated linkages between potential aerobil methane oxidation and denitrification taxa.
+
+\textbf{Experimental coupling between aerobic CH4 oxidation and denitriﬁcation:}
+To verify the inﬂuence of aerobic CH$_4$ oxidation on denitriﬁcation, we determined changes in N$_2$O emissions, NO$_3^-$ consumption and the expression of denitriﬁcation genes under CH4 addition in selected soils. The addition of methanotrophs also led to an overall increase in
+N$_2$O emissions and NO$_3^-$-N consumption compared to the control.
+
+\textbf{Microbial guilds associated with the coupling between aerobic CH4 oxidation and denitriﬁcation:} DNA-SIP experiments to identify key taxa associated with the coupling.
+
+\textbf{Genes and metabolic pathways associated with the coupling between aerobic CH4 oxidation and denitriﬁcation:}these denitrifying MAGs also enriched genes responsible for the activation of carbonaceous organics such as methanol, formaldehyde, formate, short-chain fatty acids, as well as small molecular organic acids involved in pyruvate, TCA cycle.
 
 \section{Replication}
 
