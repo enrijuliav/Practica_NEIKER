@@ -35,10 +35,9 @@ for (soil in soiltype) {
     example <- rawdata[rawdata["Soil type"]==soil, c("Treatment",metabolite)]
     # ANOVA test
     result <- aov(example[[metabolite]] ~ Treatment, data = example)
-    # Print the general ANOVA result and significance
-    print(summary(result))
+    # Save the general ANOVA pvalue
     pvalues <- append(pvalues,summary(result)[[1]]["Pr(>F)"][1,])
-    # Extract the values for every posible combination of treatments
+    # Extract the values for every posible combination of treatments in one set of conditions
     stats <- append(stats,TukeyHSD(result)[1])
   }
 }
@@ -83,3 +82,134 @@ padj < 0.05
 
 
 # Now we will roughly represent Figure 5B, with the significance we calculated.
+
+##Fig.2B
+library(ggplot2)
+library(forcats)
+library(ggbreak)
+rawdata$`Soil type`<-factor(rawdata$`Soil type`)
+rawdata$Treatment <- factor(rawdata$Treatment)
+rawdata$Replicate <- factor(rawdata$Replicate)
+prueba <- rawdata[,c(2,3,5)]
+
+
+FA <- ggplot(rawdata, aes(fill=Treatment, y = Succinate, x = `Soil type`)) + 
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5) +
+  theme_classic(base_size = 12) +
+  theme(panel.border=element_rect(fill='transparent',size=0.5),
+        text = element_text(family = "C",size = 18, colour = "black"))+
+  geom_vline(aes(xintercept=as.numeric(as.factor(`Soil type`))+0.5),linetype=2,cex=2)+
+  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
+               width = 0.2,position = position_dodge(1))
+FA
+
+
+
+
+A$condictions <- as.factor(A$condictions)
+A$condictions <- fct_inorder(A$condictions)
+A$group <- as.factor(A$group)
+A$group <- fct_inorder(A$group)
+bA<-ggplot(A, aes(fill=condictions, y=values, x=group))+
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5)+
+  theme_classic(base_size = 12)+
+  theme(panel.border=element_rect(fill='transparent',size=0.5),
+        text = element_text(family = "C",size = 18, colour = "black"))+
+  geom_vline(aes(xintercept=as.numeric(as.factor(group))+0.5),linetype=2,cex=2)+
+  geom_rect(aes(xmin=as.numeric(as.factor(group))+0.5,xmax=Inf,ymin=(-Inf),ymax=Inf),
+            fill='white',color='white')+
+  geom_vline(xintercept =A$condictions,linetype=2,cex=2)+
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5)+
+  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
+               width = 0.2,position = position_dodge(1))+
+  scale_y_continuous(limits = c(0,8))+
+  theme(legend.direction = "horizontal", legend.position = "top")+
+  labs(title = "", y="Gene copies", x = "")+
+  theme(axis.text.y.right = element_blank(),
+        axis.ticks.y.right = element_blank())+
+  theme(axis.text.x = element_text(size = 18))+
+  theme(axis.text.y = element_text(size = 18))+
+  theme(axis.title = element_text(size = 18))+
+  scale_fill_manual(values = c('#ffffff','#dae1ff','#9faaff','#5a71ff','#2a2aff'))+
+  facet_grid(~ group1, scale="free",space="free_y")+
+  theme(strip.text = element_text(size = 18),
+        strip.background = element_rect(fill="#d9d9d9", colour="black",
+                                        size=0.7))+
+  geom_jitter(data = A, aes(x = group, y = values,color="black"),shape=21,color='black',
+              position = position_jitterdodge(jitter.height=0.1,
+                                              jitter.width = 0.2,
+                                              dodge.width = 1,
+                                              seed = 12345),
+              size = 2, alpha = 0.8,show.legend = F)
+bA
+
+bB<-ggplot(A, aes(fill=condictions, y=valuesHN, x=group))+
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5)+
+  theme_classic(base_size = 12)+
+  theme(panel.border=element_rect(fill='transparent',size=0.5),
+        text = element_text(family = "C",size = 18, colour = "black"))+
+  geom_vline(aes(xintercept=as.numeric(as.factor(group))+0.5),linetype=2,cex=2)+
+  geom_rect(aes(xmin=as.numeric(as.factor(group))+0.5,
+                xmax=Inf, ymin=(-Inf),ymax=Inf),
+            fill='white',color='white')+
+  geom_vline(xintercept =A$condictions,linetype=2,cex=2)+
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5)+
+  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
+               width = 0.2,position = position_dodge(1))+
+  theme(legend.direction = "horizontal", legend.position = "top")+
+  labs(title = "", y="Gene copies", x = "")+
+  theme(axis.text.y.right = element_blank(),
+        axis.ticks.y.right = element_blank())+
+  theme(axis.text.x = element_text(size = 18))+
+  theme(axis.text.y = element_text(size = 18))+
+  theme(axis.title = element_text(size = 18))+
+  scale_fill_manual(values = c('#ffffff','#dae1ff','#9faaff','#5a71ff','#2a2aff'))+
+  scale_y_continuous(limits = c(0,8))+
+  facet_grid(~ group2, scale="free",space="free_y")+
+  theme(strip.text = element_text(size = 18),
+        strip.background = element_rect(fill="#d9d9d9", colour="black",
+                                        size=0.7))+
+  geom_jitter(data = A, aes(x = group, y = valuesHN,color="black"),
+              shape=21,color='black',
+              position = position_jitterdodge(jitter.height=0.1,
+                                              jitter.width = 0.2,
+                                              dodge.width = 1,
+                                              seed = 123),
+              size = 2, alpha = 0.8,show.legend = F)
+bB
+bC<-ggplot(A, aes(fill=condictions, y=valuesGD, x=group))+
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5)+
+  theme_classic(base_size = 12)+
+  theme(panel.border=element_rect(fill='transparent',size=0.5),
+        text = element_text(family = "C",size = 18, colour = "black"))+
+  geom_vline(aes(xintercept=as.numeric(as.factor(group))+0.5),linetype=2,cex=2)+
+  geom_rect(aes(xmin=as.numeric(as.factor(group))+0.5,
+                xmax=Inf, ymin=(-Inf),ymax=Inf),
+            fill='white',color='white')+
+  geom_vline(xintercept =A$condictions,linetype=2,cex=2)+
+  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black",size=0.5)+
+  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
+               width = 0.2,position = position_dodge(1))+
+  theme(legend.direction = "horizontal", legend.position = "top")+
+  labs(title = "", y="Gene copies", x = "")+
+  theme(axis.text.y.right = element_blank(),
+        axis.ticks.y.right = element_blank())+
+  theme(axis.text.x = element_text(size = 18))+
+  theme(axis.text.y = element_text(size = 18))+
+  theme(axis.title = element_text(size = 18))+
+  scale_fill_manual(values = c('#ffffff','#dae1ff','#9faaff','#5a71ff','#2a2aff'))+
+  scale_y_continuous(limits = c(0,8))+
+  facet_grid(~ group3, scale="free",space="free_y")+
+  theme(strip.text = element_text(size = 18),
+        strip.background = element_rect(fill="#d9d9d9", colour="black",size=0.7))+
+  geom_jitter(data = A, aes(x = group, y = valuesGD,color="black"),shape=21,color='black',
+              position = position_jitterdodge(jitter.height=0.1,
+                                              jitter.width = 0.2,
+                                              dodge.width = 1,
+                                              seed = 123),
+              size = 2, alpha = 0.8,show.legend = F)
+bC
+(bA)|(bB)|(bC)
+
+
+
