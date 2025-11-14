@@ -1,0 +1,89 @@
+Fig 3C. Biomarkers of key nirK-denitrifiers and nirS-denitrifiers at the genus level (based on RNA reverse transcription) in methanotrophs addition treatment. ;;;;
+Soil type;Treatment;nirS-denitrifiers;LDA score (log10);p
+Black soil;Methanotroph addition;OTU249;2,8758 ;0,0369 
+Black soil;Methanotroph addition;OTU45;3,3718 ;0,0463 
+Black soil;Methanotroph addition;OTU142;3,3675 ;0,0369 
+Black soil;Methanotroph addition;OTU14;4,0434 ;0,0495 
+Black soil;Methanotroph addition;OTU15;4,4117 ;0,0495 
+Black soil;Methanotroph addition;OTU183;2,8254 ;0,0369 
+Black soil;Methanotroph addition;OTU130;3,0049 ;0,0369 
+Black soil;Methanotroph addition;OTU58;3,1053 ;0,0369 
+Black soil;Methanotroph addition;OTU59;3,2112 ;0,0369 
+Black soil;Methanotroph addition;OTU56;3,3322 ;0,0369 
+Black soil;Methanotroph addition;OTU175;2,9390 ;0,0369 
+Black soil;Methanotroph addition;OTU176;2,9659 ;0,0369 
+Black soil;Methanotroph addition;OTU459;3,0968 ;0,0369 
+Black soil;Methanotroph addition;OTU306;3,1963 ;0,0369 
+Black soil;Methanotroph addition;OTU5;3,0784 ;0,0369 
+Black soil;Methanotroph addition;OTU62;3,6319 ;0,0463 
+Black soil;Methanotroph addition;OTU66;3,0690 ;0,0369 
+Black soil;Methanotroph addition;OTU122;3,0127 ;0,0369 
+Black soil;Methanotroph addition;OTU34;3,2797 ;0,0369 
+Black soil;Methanotroph addition;OTU81;2,9121 ;0,0369 
+Black soil;Methanotroph addition;OTU87;3,4453 ;0,0463 
+Black soil;Methanotroph addition;OTU85;3,4518 ;0,0369 
+Black soil;Methanotroph addition;OTU12;3,6456 ;0,0495 
+Black soil;Methanotroph addition;OTU117;3,1146 ;0,0369 
+Red soil;Methanotroph addition;OTU1207;2,5554 ;0,0369 
+Red soil;Methanotroph addition;OTU1149;2,5788 ;0,0369 
+Red soil;Methanotroph addition;OTU1152;2,6393 ;0,0369 
+Red soil;Methanotroph addition;OTU1148;2,6814 ;0,0369 
+Red soil;Methanotroph addition;OTU1147;2,8445 ;0,0495 
+Red soil;Methanotroph addition;OTU1150;2,9049 ;0,0369 
+Red soil;Methanotroph addition;OTU240;3,2290 ;0,0369 
+Red soil;Methanotroph addition;OTU27;3,4717 ;0,0495 
+Red soil;Methanotroph addition;OTU17;3,6578 ;0,0495 
+Yellow soil;Methanotroph addition;OTU360;3,0486 ;0,0369 
+Yellow soil;Methanotroph addition;OTU362;3,0792 ;0,0495 
+Yellow soil;Methanotroph addition;OTU34;3,2439 ;0,0495 
+Yellow soil;Methanotroph addition;OTU16;3,4423 ;0,0495 
+Yellow soil;Methanotroph addition;OTU8;3,9760 ;0,0495 
+Yellow soil;CT;otu507;2,8543 ;0,0463 
+Yellow soil;CT;otu76;3,1698 ;0,0495 
+Yellow soil;CT;otu153;3,2378 ;0,0369 
+Yellow soil;CT;otu92;3,0828 ;0,0495 
+Yellow soil;CT;otu144;3,0800 ;0,0495 
+Yellow soil;CT;otu3;4,5169 ;0,0495 
+Yellow soil;CT;otu24;3,1967 ;0,0495 
+Yellow soil;CT;otu124;3,0774 ;0,0369 
+Red soil;CT;otu507;2,9626 ;0,0369 
+Red soil;CT;otu430;3,2150 ;0,0369 
+Red soil;CT;otu77;3,1676 ;0,0369 
+Red soil;CT;otu322;2,9704 ;0,0369 
+Red soil;CT;otu99;3,0758 ;0,0495 
+Red soil;CT;otu613;2,7753 ;0,0369 
+Red soil;CT;otu102;3,1621 ;0,0369 
+Red soil;CT;otu365;2,5051 ;0,0369 
+Red soil;CT;otu834;2,5442 ;0,0369 
+Red soil;CT;otu165;3,1264 ;0,0369 
+Red soil;CT;otu262;3,0139 ;0,0369 
+Red soil;CT;otu585;3,0894 ;0,0369 
+Red soil;CT;otu60;2,8026 ;0,0369 
+Red soil;CT;otu125;3,0841 ;0,0463 
+Red soil;CT;otu38;3,1846 ;0,0369 
+Red soil;CT;otu31;3,0055 ;0,0369 
+Red soil;CT;otu87;3,2933 ;0,0369 
+Red soil;CT;otu89;3,3775 ;0,0369 
+Black soil;CT;otu1157;3,0373 ;0,0463 
+Black soil;CT;otu918;3,3205 ;0,0495 
+Black soil;CT;otu2;4,8683 ;0,0495 
+Black soil;CT;otu3;3,8009 ;0,0369 
+Black soil;CT;otu1099;2,9389 ;0,0369 
+Black soil;CT;otu27;3,7430 ;0,0495 
+Black soil;CT;otu1162;3,4601 ;0,0369 
+Black soil;CT;otu284;3,6755 ;0,0495 
+Black soil;Methanotroph addition;OTU38;3,7530 ;0,0369 
+Black soil;Methanotroph addition;OTU145;3,8971 ;0,0369 
+Black soil;Methanotroph addition;OTU44;3,9593 ;0,0369 
+Black soil;Methanotroph addition;OTU34;3,9932 ;0,0369 
+Black soil;Methanotroph addition;OTU129;3,9963 ;0,0369 
+Black soil;Methanotroph addition;OTU17;4,2062 ;0,0369 
+Black soil;Methanotroph addition;OTU3;4,7190 ;0,0369 
+Black soil;Methanotroph addition;OTU2;4,8412 ;0,0369 
+Black soil;Methanotroph addition;OTU1;5,4599 ;0,0369 
+Red soil;Methanotroph addition;OTU1;5,0334 ;0,0369 
+Red soil;Methanotroph addition;OTU2;4,9808 ;0,0369 
+Red soil;Methanotroph addition;OTU125;3,9067 ;0,0369 
+Red soil;Methanotroph addition;OTU89;3,6626 ;0,0369 
+Yellow soil;Methanotroph addition;OTU1;5,6211 ;0,0463 
+Yellow soil;Methanotroph addition;OTU2;4,9861 ;0,0369 

@@ -1,0 +1,29 @@
+Fig.3B Changes in the transcript of denitrifying genes (nirK and nirS) after methanotroph addition.;;;;;;;
+ID;Time;Soil type;Treatment;Replicate;nirS;nirK;nirS
+1;5day;Black soil;CT;1;343897,28 ;3676,77 ;343897,28 
+2;5day;Black soil;CT;2;372488,24 ;2548,48 ;372488,24 
+3;5day;Black soil;CT;3;304942,05 ;1935,90 ;304942,05 
+4;5day;Black soil;2×109 cell · g-1;1;1394642,02 ;20648,51 ;1394642,02 
+5;5day;Black soil;2×109 cell · g-1;2;1305677,58 ;21943,68 ;1305677,58 
+6;5day;Black soil;2×109 cell · g-1;3;1216713,14 ;23238,85 ;1216713,14 
+7;5day;Black soil;1010 cell · g-1;1;1651232,96 ;88919,55 ;1651232,96 
+8;5day;Black soil;1010 cell · g-1;2;1635573,96 ;69065,42 ;1635573,96 
+9;5day;Black soil;1010 cell · g-1;3;1856094,34 ;108884,54 ;1856094,34 
+10;5day;Red soil;CT;1;598776,06 ;13875,68 ;598776,06 
+11;5day;Red soil;CT;2;668348,07 ;14011,28 ;668348,07 
+12;5day;Red soil;CT;3;399595,69 ;4409,25 ;399595,69 
+13;5day;Red soil;2×109 cell · g-1;1;2057117,39 ;87327,98 ;2057117,39 
+14;5day;Red soil;2×109 cell · g-1;2;2896663,72 ;131463,53 ;2896663,72 
+15;5day;Red soil;2×109 cell · g-1;3;1217571,06 ;43192,42 ;1217571,06 
+16;5day;Red soil;1010 cell · g-1;1;1116766,03 ;12493,93 ;1116766,03 
+17;5day;Red soil;1010 cell · g-1;2;522557,95 ;5493,89 ;522557,95 
+18;5day;Red soil;1010 cell · g-1;3;490764,92 ;4565,84 ;490764,92 
+19;5day;Yellow soil;CT;1;996876,33 ;33567,19 ;996876,33 
+20;5day;Yellow soil;CT;2;1418254,42 ;33417,38 ;1418254,42 
+21;5day;Yellow soil;CT;3;1322527,14 ;28255,39 ;1322527,14 
+22;5day;Yellow soil;2×109 cell · g-1;1;1086298,93 ;56908,41 ;1086298,93 
+23;5day;Yellow soil;2×109 cell · g-1;2;1544877,62 ;75733,73 ;1544877,62 
+24;5day;Yellow soil;2×109 cell · g-1;3;1315588,28 ;66321,07 ;1315588,28 
+25;5day;Yellow soil;1010 cell · g-1;1;2520513,41 ;286480,89 ;2520513,41 
+26;5day;Yellow soil;1010 cell · g-1;2;2130590,45 ;159619,67 ;2130590,45 
+27;5day;Yellow soil;1010 cell · g-1;3;2325551,93 ;223050,28 ;2325551,93 
