@@ -98,4 +98,10 @@ We tried studying the outliers, to ensure that we were not considering some data
 
 Besides, we realized that the authors did not thought about the multiple testing effect on the significance of the results. In the 5B Figure analysis a total of 18 test were performed, which, because of the nature of this tests, would lead to at least 1 of them being a false positive. Given the characteristics of this analysis performing Bonferroni correction would be too restrictive of a test for our necessities. In this case, we proposed the use of False Discovery Rate correction
 
+QUIIME2:
+
+qiime tools import  --type 'SampleData[SequencesWithQuality]'  --input-path nirS-fq-manifest.tsv  --output-path demux.qza  --input-format SingleEndFastqManifestPhred33V2
+
+
+
 \end{document}
