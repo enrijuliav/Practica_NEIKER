@@ -1,0 +1,31 @@
+group,condictions,values,valuesHN,valuesGD,group1,group2,group3
+nirK,CT,3.223453978,4.097627184,2.862998359,Black soil,Red soil,Yellow soil
+nirK,CT,3.118168019,4.168819555,2.817699473,Black soil,Red soil,Yellow soil
+nirK,CT,3.073134443,4.229968671,2.811372918,Black soil,Red soil,Yellow soil
+nirK,CT_N,3.163331633,4.295464836,2.716920548,Black soil,Red soil,Yellow soil
+nirK,CT_N,3.122508907,4.308330605,3.015648448,Black soil,Red soil,Yellow soil
+nirK,CT_N,3.200644656,4.362051308,2.891478433,Black soil,Red soil,Yellow soil
+nirK,0.01% CH4_N,3.612384681,4.47656736,3.479390096,Black soil,Red soil,Yellow soil
+nirK,0.01% CH4_N,3.563591461,4.578058389,3.062422355,Black soil,Red soil,Yellow soil
+nirK,0.01% CH4_N,3.438166452,4.343884552,3.206838738,Black soil,Red soil,Yellow soil
+nirK,0.1% CH4_N,3.678612275,2.828639542,3.981312924,Black soil,Red soil,Yellow soil
+nirK,0.1% CH4_N,3.720135171,2.50225102,4.167763196,Black soil,Red soil,Yellow soil
+nirK,0.1% CH4_N,3.744096437,2.740214984,3.647635348,Black soil,Red soil,Yellow soil
+nirK,1% CH4_N,3.701296509,3.805426314,4.245275703,Black soil,Red soil,Yellow soil
+nirK,1% CH4_N,3.684973405,3.804643073,4.406155498,Black soil,Red soil,Yellow soil
+nirK,1% CH4_N,3.88278281,3.806208146,3.986922858,Black soil,Red soil,Yellow soil
+nirS,CT,5.113140487,5.87205603,3.873412376,Black soil,Red soil,Yellow soil
+nirS,CT,5.170158943,6.011506535,3.857983103,Black soil,Red soil,Yellow soil
+nirS,CT,5.2101619,5.872140661,4.011166464,Black soil,Red soil,Yellow soil
+nirS,CT_N,5.147135318,6.747579455,4.762695228,Black soil,Red soil,Yellow soil
+nirS,CT_N,5.496463779,6.389374207,4.466965222,Black soil,Red soil,Yellow soil
+nirS,CT_N,5.620544299,6.604406035,4.639530351,Black soil,Red soil,Yellow soil
+nirS,0.01% CH4_N,6.044497444,6.910884415,5.697332828,Black soil,Red soil,Yellow soil
+nirS,0.01% CH4_N,6.512225456,7.131564248,5.550216676,Black soil,Red soil,Yellow soil
+nirS,0.01% CH4_N,6.229887094,6.439561012,5.672603703,Black soil,Red soil,Yellow soil
+nirS,0.1% CH4_N,6.558069798,5.911648364,5.51935455,Black soil,Red soil,Yellow soil
+nirS,0.1% CH4_N,6.317076438,5.876847116,5.707393969,Black soil,Red soil,Yellow soil
+nirS,0.1% CH4_N,6.134595845,5.943866595,5.838185737,Black soil,Red soil,Yellow soil
+nirS,1% CH4_N,6.543800209,6.086775935,5.709815827,Black soil,Red soil,Yellow soil
+nirS,1% CH4_N,6.537919019,5.996205706,5.619961906,Black soil,Red soil,Yellow soil
+nirS,1% CH4_N,6.531957091,6.36801066,5.506534391,Black soil,Red soil,Yellow soil

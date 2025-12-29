@@ -1,5 +1,7 @@
 ##Fig.2A
 
+setwd("~/Documentos/GitHub/Practica_NEIKER")
+
 # Installing packages
 if(!require("ggplot2")) install.packages("ggplot2")
 library("ggplot2")
@@ -9,9 +11,8 @@ if(!require("cowplot")) install.packages("cowplot")
 library(cowplot)
 
 df<-read.csv("Processed_data/MD_figures/gas_fig2aaa.csv")
-df
 df$supp <- as.factor(df$supp)
-df$supp <- fct_inorder(df$supp)
+df$supp <- factor(df$supp, c("CT", "CT_N", "0.01% CH4_N", "0.1% CH4_N", "1% CH4_N"))
 
 p1<-ggplot(df,aes(x=dose, y=len, colour=supp,shape=supp))+
   geom_errorbar(aes(ymin=len-se, ymax=len+se),colour="black", width=.2,size=0.5)+
@@ -22,12 +23,11 @@ p1<-ggplot(df,aes(x=dose, y=len, colour=supp,shape=supp))+
   scale_y_continuous(limits = c(0.01,0.025),breaks = c(0.012,0.024))+
   scale_x_continuous(breaks=0:15*3)+
   theme_bw()+
+  theme(legend.position = "none")+
   theme(panel.grid.major=element_line(colour=NA),
         panel.background = element_rect(fill = "transparent",colour = NA),
         plot.background = element_rect(fill = "transparent",colour = NA),
-        panel.grid.minor = element_blank(),
-        legend.justification=c(0.85,0.1),
-        legend.position=c(0.2,0.6))+
+        panel.grid.minor = element_blank())+
   labs(title = "", y="N₂O emissions (µg N·g⁻¹ soil)", x = "Time (d)")+
   theme(axis.text.x = element_text(size = 18, colour = "black"),
         axis.ticks.x = element_line(colour = "black", size = 0.68))+
@@ -47,12 +47,11 @@ p2<-ggplot(df,aes(x=dose, y=lenHN, colour=supp,shape=supp))+
   scale_y_continuous(limits = c(0.5,15),breaks = c(0,5,10,15)) +
   scale_x_continuous(breaks=0:15*3)+
   theme_bw()+
+  theme(legend.direction = "horizontal", legend.position = "top")+
   theme(panel.grid.major=element_line(colour=NA),
         panel.background = element_rect(fill = "transparent",colour = NA),
         plot.background = element_rect(fill = "transparent",colour = NA),
-        panel.grid.minor = element_blank(),
-        legend.justification=c(0.85,0.1),
-        legend.position="none")+
+        panel.grid.minor = element_blank())+
   labs(title = "", y="", x = "Time (d)")+
   theme(axis.text.x = element_text(size = 18, colour = "black"),
         axis.ticks.x = element_line(colour = "black", size = 0.68))+
@@ -72,12 +71,11 @@ p3<-ggplot(df,aes(x=dose, y=lenGD, colour=supp,shape=supp))+
   scale_y_continuous(limits = c(0.005,0.2),breaks = c(0,0.1,0.2)) +
   scale_x_continuous(breaks=0:15*3)+
   theme_bw()+
+  theme(legend.position = "none")+
   theme(panel.grid.major=element_line(colour=NA),
         panel.background = element_rect(fill = "transparent",colour = NA),
         plot.background = element_rect(fill = "transparent",colour = NA),
-        panel.grid.minor = element_blank(),
-        legend.justification=c(0.85,0.1),
-        legend.position="none")+
+        panel.grid.minor = element_blank())+
   labs(title = "", y="", x = "Time (d)")+
   theme(axis.text.x = element_text(size = 18, colour = "black"),
         axis.ticks.x = element_line(colour = "black", size = 0.68))+
@@ -90,4 +88,7 @@ p3<-ggplot(df,aes(x=dose, y=lenGD, colour=supp,shape=supp))+
 p3
 
 
-plot_grid(p1,p2,p3,ncol=3,nrow=1)
+ggarrange(p1,p2,p3,ncol=3,nrow=1, common.legend = TRUE, legend="top")
+
+
+# Save with 1200*600 resolution

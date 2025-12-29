@@ -1,0 +1,6 @@
+"","Black.soil.Acetatep.adj","Black.soil.Propionatep.adj","Black.soil.Butyratep.adj","Black.soil.Lactatep.adj","Black.soil.Malatep.adj","Black.soil.Succinatep.adj","Red.soil.Acetatep.adj","Red.soil.Propionatep.adj","Red.soil.Butyratep.adj","Red.soil.Lactatep.adj","Red.soil.Malatep.adj","Red.soil.Succinatep.adj","Yellow.soil.Acetatep.adj","Yellow.soil.Propionatep.adj","Yellow.soil.Butyratep.adj","Yellow.soil.Lactatep.adj","Yellow.soil.Malatep.adj","Yellow.soil.Succinatep.adj"
+"13CH4-CT",0,0.126,0.008,1,0.636,0.973,0.001,0,0.128,NA,0.109,0.394,0.005,0.001,0,0.997,0.02,0
+"13CH4 _N-CT",0,0.003,0.007,0.002,0.014,0.001,0.013,0.106,0.577,NA,0.109,0.536,0.013,0,0,0.008,0.672,0
+"13CH4 _N-13CH4",0.004,0.033,0.988,0.002,0.04,0.001,0.05,0.001,0.035,NA,1,0.955,0.632,0.004,0.002,0.009,0.058,0.009
+"p_val",0,0.004,0.005,0.001,0.013,0.001,0.001,0,0.038,NA,0.079,0.388,0.005,0,0,0.005,0.02,0
+"p_adj",0,0.007,0.007,0.002,0.017,0.002,0.002,0,0.043,NA,0.084,0.388,0.007,0,0,0.007,0.024,0
