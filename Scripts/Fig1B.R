@@ -7,7 +7,7 @@ library(ggplot2)
 library(ggbreak)
 library(ggpubr)
 
-load2B <- function(csv) {
+load1B <- function(csv) {
   # Load data
   data <- read.csv(csv)
   # Change colnames
@@ -24,7 +24,7 @@ load2B <- function(csv) {
   return(data)
 }
 
-rawdata <- load3B("Raw_data/MD2B_rawdata.csv")
+rawdata <- load3B("Raw_data/MD1B_rawdata.csv")
 
 # Select the variables for the analysis: Soil type and metabolites
 soiltypes <- unique(rawdata[["Soil type"]])
