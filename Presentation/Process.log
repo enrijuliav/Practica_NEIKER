@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.8)  27 NOV 2025 23:12
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (TeX Live 2023/Debian) (preloaded format=pdflatex 2025.11.8)  1 JAN 2026 17:49
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -96,24 +96,24 @@ e
 
 {/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <7> on input line 27.
+(Font)              <7> on input line 29.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <5> on input line 27.
+(Font)              <5> on input line 29.
 <Methane-oxidation_Denitrification.png, id=8, 853.1875pt x 252.945pt>
 File: Methane-oxidation_Denitrification.png Graphic file (type png)
 <use Methane-oxidation_Denitrification.png>
 Package pdftex.def Info: Methane-oxidation_Denitrification.png  used on input l
-ine 45.
+ine 47.
 (pdftex.def)             Requested size: 255.95822pt x 75.88408pt.
  [2]
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <12> on input line 61.
+(Font)              <12> on input line 63.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <8> on input line 61.
+(Font)              <8> on input line 63.
 LaTeX Font Info:    External font `cmex10' loaded for size
-(Font)              <6> on input line 61.
+(Font)              <6> on input line 63.
  [3 <./Methane-oxidation_Denitrification.png>] [4]
-Overfull \hbox (5.50081pt too wide) in paragraph at lines 103--104
+Overfull \hbox (5.50081pt too wide) in paragraph at lines 105--106
 \OT1/cmr/m/n/10 nirS-fq-manifest.tsv --output-path de-mux.qza --input-format Si
 n-gleEnd-Fastq-Man-
  []
@@ -140,7 +140,7 @@ mf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texlive/texmf-dist/
 fonts/type1/public/amsfonts/cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/ty
 pe1/public/amsfonts/cm/cmsy7.pfb></usr/share/texlive/texmf-dist/fonts/type1/pub
 lic/amsfonts/cm/cmti10.pfb>
-Output written on Process.pdf (5 pages, 138768 bytes).
+Output written on Process.pdf (5 pages, 138848 bytes).
 PDF statistics:
  62 PDF objects out of 1000 (max. 8388607)
  36 compressed objects within 1 object stream
