@@ -158,59 +158,66 @@ def extract_NIH_ID(file: str, mail: str) -> tuple[dict[str, str],dict[str, list[
 
 ######################################################################################################################
 
-outnirK = parse_gene("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/PHMMER/hmmbuild_out_nirK.txt", "nirK")
-outnirS = parse_gene("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/PHMMER/hmmbuild_out_nirS.txt", "nirS")
+if __name__ == "__main__":
 
-protnirK = prepare_db("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Raw_data/HMM/Prot_database/nirK_prot_annot.fasta")
-protnirS = prepare_db("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Raw_data/HMM/Prot_database/nirS_prot_annot.fasta")
+    outnirK = parse_gene("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/PHMMER/hmmbuild_out_nirK.txt", "nirK")
+    outnirS = parse_gene("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/PHMMER/hmmbuild_out_nirS.txt", "nirS")
 
-transeqs = parse_seqs("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/transeq-otu-seqs.fasta")
+    protnirK = prepare_db("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Raw_data/HMM/Prot_database/nirK_prot_annot.fasta")
+    protnirS = prepare_db("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Raw_data/HMM/Prot_database/nirS_prot_annot.fasta")
 
-write_phmmer("nirK", outnirK, transeqs)
-write_phmmer("nirS", outnirS, transeqs)
+    transeqs = parse_seqs("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/transeq-otu-seqs.fasta")
 
-""" phmmer -o nirK_phmmer.txt --tblout nirK_phhmer_table.txt --noali --cpu 20  hmmsearch_nirK.fasta Prot_database/nirK_prot_annot.fasta """
-""" phmmer -o nirS_phmmer.txt --tblout nirS_phhmer_table.txt --noali --cpu 20  hmmsearch_nirS.fasta Prot_database/nirS_prot_annot.fasta """
+    write_phmmer("nirK", outnirK, transeqs)
+    write_phmmer("nirS", outnirS, transeqs)
 
-""" phmmernirK_result = extract_NIH_ID("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/nirK_phmmer.txt", "enrijuliav@gmail.com")
-NIH_ID_nirK = phmmernirK_result[0]
-genus_nirK = phmmernirK_result[1]
+    """ phmmer -o nirK_phmmer.txt --tblout nirK_phhmer_table.txt --noali --cpu 20  hmmsearch_nirK.fasta Prot_database/nirK_prot_annot.fasta """
+    """ phmmer -o nirS_phmmer.txt --tblout nirS_phhmer_table.txt --noali --cpu 20  hmmsearch_nirS.fasta Prot_database/nirS_prot_annot.fasta """
 
-phmmernirS_result = extract_NIH_ID("nirS_phmmer.txt", "enrijuliav@gmail.com")
-NIH_ID_nirS = phmmernirS_result[0]
-genus_nirS = phmmernirS_result[1]
+    """ phmmernirK_result = extract_NIH_ID("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/nirK_phmmer.txt", "enrijuliav@gmail.com")
+    NIH_ID_nirK = phmmernirK_result[0]
+    genus_nirK = phmmernirK_result[1]
 
-with open("phmmer_nirK.txt", "w") as f:     
-    for ID in NIH_ID_nirK:
-        f.write(f">{ID}\n")
-        f.write(NIH_ID_nirK[ID]+"\n")
+    phmmernirS_result = extract_NIH_ID("nirS_phmmer.txt", "enrijuliav@gmail.com")
+    NIH_ID_nirS = phmmernirS_result[0]
+    genus_nirS = phmmernirS_result[1]
 
-with open("phmmer_nirS.txt", "w") as f:
-    for ID in NIH_ID_nirS:
-        f.write(f">{ID}\n")
-        f.write(NIH_ID_nirS[ID]+"\n")
+    with open("phmmer_nirK.txt", "w") as f:     
+        for ID in NIH_ID_nirK:
+            f.write(f">{ID}\n")
+            f.write(NIH_ID_nirK[ID]+"\n")
 
-with open("genus_nirK.txt", "w") as f:     
-    for ID in genus_nirK:
-        f.write(f">{ID}\n")
-        f.write("; ".join(genus_nirK[ID])+"\n")
+    with open("phmmer_nirS.txt", "w") as f:
+        for ID in NIH_ID_nirS:
+            f.write(f">{ID}\n")
+            f.write(NIH_ID_nirS[ID]+"\n")
 
-with open("genus_nirS.txt", "w") as f:
-    for ID in genus_nirS:
-        f.write(f">{ID}\n")
-        f.write("; ".join(genus_nirS[ID])+"\n") """
+    with open("genus_nirK.txt", "w") as f:     
+        for ID in genus_nirK:
+            f.write(f">{ID}\n")
+            f.write("; ".join(genus_nirK[ID])+"\n")
+
+    with open("genus_nirS.txt", "w") as f:
+        for ID in genus_nirS:
+            f.write(f">{ID}\n")
+            f.write("; ".join(genus_nirS[ID])+"\n") """
 
 
-""" with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/feature-table.tsv") as f:
-    doc = f.read()
+    """ with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/feature-table.tsv") as f:
+        doc = f.read() """
 
-with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirS.txt") as f:
-    doc = f.read() """
+    with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirS.txt") as f:
+        doc = f.read()
 
-with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirK.txt") as f:
-    doc = f.read()
 
-print(doc.split(">")[1:])
-for seq in doc.split(">")[1:]:
-    print(seq.split("\n")[:-1])
-    print(seq.split("\n")[-2].split(";")[-1].strip())
+    for seq in doc.split(">")[1:]:
+        print(seq.split("\n")[0].split("_")[0])
+        print(seq.split("\n")[-2].split(";")[-1].strip())
+
+    with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirK.txt") as f:
+        doc = f.read()
+
+
+    for seq in doc.split(">")[1:]:
+        print(seq.split("\n")[0].split("_")[0])
+        print(seq.split("\n")[-2].split(";")[-1].strip())
