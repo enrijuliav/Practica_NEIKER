@@ -1,0 +1,282 @@
+>04eaf306a95599373c94ec573d2394d5_1
+uncultured bacterium; environmental samples
+>ee80a82c75096ec468be62469aa69a59_1
+uncultured denitrifying bacterium; environmental samples
+>a0e2c0cb4e9fd458f19bc3d9ffa5789c_1
+uncultured organism; environmental samples
+>2c11fd8774fe642ac795ccaee421729a_1
+uncultured prokaryote; environmental samples
+>7479a39aa19e3843e83a63618d283bfb_1
+uncultured bacterium; environmental samples
+>cad78f4605405f95c9c00a17ab211a6d_1
+uncultured organism; environmental samples
+>315a869abd949305bfb45b6d2e137b11_1
+uncultured bacterium; environmental samples
+>3edba8795ca36e4f55af84fec91edc75_1
+uncultured denitrifying bacterium; environmental samples
+>13c36caeb7d9e453ad4cb7fd345e3e99_1
+uncultured bacterium; environmental samples
+>a2fcd7d1c5f5bd4f9bac355978346b94_1
+uncultured bacterium; environmental samples
+>b53f500bb1bbaea9f0b9371c037c91e9_1
+uncultured soil bacterium; environmental samples
+>f84a32aebe5a09f50b0044636a651802_1
+uncultured soil bacterium; environmental samples
+>6f5550c2fc099817ae98ff87bcb8415e_1
+uncultured bacterium; environmental samples
+>100faf3a81dd81f6aeed325276ed00cc_1
+uncultured bacterium; environmental samples
+>bd8ad2508a95df61908409c90697918d_1
+uncultured bacterium; environmental samples
+>fc7e21072ff3622c32b3720e9bda25a6_1
+uncultured bacterium; environmental samples
+>d60b3e478cf00390f9bf3a3e5f51c6eb_1
+uncultured bacterium; environmental samples
+>e46912f562a2271c7aef0cc945f084c3_1
+uncultured bacterium; environmental samples
+>ad3da8ef56b559101f31bef0de98d4b8_1
+uncultured bacterium; environmental samples
+>2dfa4d96fa5b4b4e39b9963393c5dab9_1
+uncultured bacterium; environmental samples
+>fa7355389b8001475130a9ae27e25ad9_1
+uncultured denitrifying bacterium; environmental samples
+>241f389987d34a6037875b1087ef428d_1
+uncultured bacterium; environmental samples
+>1f45abf2989b0c1d453f3d1cda4d5634_1
+uncultured bacterium; environmental samples
+>c03c96e6abcbf28a991eec2e93302e5e_1
+uncultured prokaryote; environmental samples
+>c185b4fc6025cd5f150b2365d74d9306_1
+uncultured prokaryote; environmental samples
+>7f4eb3c164ec777f0330e392aa3e5d8e_1
+uncultured prokaryote; environmental samples
+>b8f3d9570495b9403e550838b66e6d44_1
+uncultured prokaryote; environmental samples
+>bec9ac08763e89f3735dbe08ec146815_1
+uncultured bacterium; environmental samples
+>7ce9028b5f406735c115909c51e6222d_1
+uncultured bacterium; environmental samples
+>a0028128f70556dd717184ec3fbb7556_1
+uncultured bacterium; environmental samples
+>784afe6b9d18b64eb87ccc3734093c36_1
+uncultured bacterium; environmental samples
+>f01fc7e79df8ccb15943cd95b6632326_1
+uncultured bacterium; environmental samples
+>6955a1d2e4ba7ef39de31488b534cfd6_1
+uncultured bacterium; environmental samples
+>028cae87f37cc27358dde461230aabce_1
+uncultured bacterium; environmental samples
+>d2ddb4d772dcab80f94a885302de8327_1
+uncultured prokaryote; environmental samples
+>e4af8741538f72f4eeb8c653e37ac6bb_1
+uncultured prokaryote; environmental samples
+>1a7287a278cb2e2d2cc56a29da3b449f_1
+uncultured bacterium; environmental samples
+>10dd76c46f99830b468f5585fd179b27_1
+uncultured bacterium; environmental samples
+>b5bc42fd18584af64ac3d5e3d41b0f6d_1
+uncultured bacterium; environmental samples
+>35673cd59521543dbaa93f82f75651c1_1
+uncultured bacterium; environmental samples
+>0911671e43c808187ab91477f38d3f72_1
+uncultured denitrifying bacterium; environmental samples
+>7779225f4411bee2a5f5bbf6fcc4a3e6_1
+uncultured denitrifying bacterium; environmental samples
+>31d894d8180381b180ddcf1c6a550391_1
+uncultured bacterium; environmental samples
+>a74f974ce52f67500cfe170afa48046a_1
+uncultured bacterium; environmental samples
+>0accf522aef2a3f0cb1a8ea39ceb9ab5_1
+uncultured bacterium; environmental samples
+>4cbdc7893a48394abe72f2663bcc1b95_1
+uncultured bacterium; environmental samples
+>1a667c0a9fdedae820600539be4e55c6_1
+uncultured bacterium; environmental samples
+>7a72cba379be795c710449fbd3e7c720_1
+uncultured bacterium; environmental samples
+>2f844ec49eba1aab33f651c84c9d8048_1
+uncultured bacterium; environmental samples
+>f30b819f1b59cd8c5c43d88fe5ac6a31_1
+uncultured bacterium 2303; environmental samples
+>e8fd1fa4943472b05b806685c3bfd88d_2
+uncultured bacterium; environmental samples
+>2dec901b81ef27215b739ce7147aa6f3_1
+uncultured bacterium; environmental samples
+>9b450bbdc9902ff194d6d95314e09d2c_3
+uncultured bacterium; environmental samples
+>21b5c6fdc93b880e63496e917cbdfd78_1
+uncultured bacterium; environmental samples
+>85b29d16c94a31f98e86d8e6b056ec6c_1
+uncultured denitrifying bacterium; environmental samples
+>08a6904cd2bfe47e727553b808e099b3_1
+uncultured bacterium; environmental samples
+>f453ed9cbe8a8bd0149e9a552a745b54_1
+uncultured bacterium; environmental samples
+>1bf3986e538fa44c30de43ac972394d1_1
+uncultured bacterium; environmental samples
+>3f7e78355883041cac5b8679a1a8474f_1
+uncultured denitrifying bacterium; environmental samples
+>1853e0219df1d5f750c4cb040eb25399_1
+uncultured bacterium; environmental samples
+>0058b6d6e0ce0a056ef695eadee6ee9b_1
+uncultured bacterium; environmental samples
+>1a352dc919235e4910b9d81d47e871f7_1
+uncultured bacterium; environmental samples
+>ef7b6014afe30201da2e08cefd358d8e_1
+uncultured bacterium; environmental samples
+>69661a629a4a48dc96561377d884d550_1
+uncultured bacterium; environmental samples
+>46cff7feea2fe716bfbe4b146810b4c5_1
+uncultured bacterium; environmental samples
+>9e58fc7629f210db4d87ea8e1de757f9_1
+uncultured bacterium; environmental samples
+>bfdd9f5ca8d971ecfb2b680a6093ae2f_1
+uncultured bacterium; environmental samples
+>1fa03ff431f127f75a9325f27e6e33ed_1
+uncultured bacterium; environmental samples
+>e5c49e17e03dc46e26dae2e465459980_1
+uncultured bacterium; environmental samples
+>b3f8a1dd0aabee41098a018314a076b4_1
+uncultured bacterium; environmental samples
+>78ac76bbddf51e03352b6694e362c7ff_1
+uncultured bacterium; environmental samples
+>c626409020e8ec7091d65dbdba998daa_1
+uncultured bacterium; environmental samples
+>c6b6b9e92b2cf5bbd5550ca156d3a8f2_1
+uncultured bacterium; environmental samples
+>5ee9792a622d221b76feb34529966068_1
+uncultured bacterium; environmental samples
+>beef485c26780eab9edbec2479f7ea19_1
+uncultured bacterium; environmental samples
+>01a6af269754f7d9816603ed4cb049bf_1
+uncultured bacterium; environmental samples
+>cf51564006308736890de58188fa0638_1
+uncultured bacterium; environmental samples
+>47a0ac4f0c46658075fa8e0fdcc06f0f_1
+uncultured bacterium; environmental samples
+>57d99e071ef6cf571270f51a411f6ce0_1
+uncultured bacterium; environmental samples
+>8daff6c62a39ff82319e7396e2eb3942_1
+uncultured bacterium; environmental samples
+>de63fe0811b5938f3d752e1c44c1bae3_1
+uncultured bacterium; environmental samples
+>6f3bbee2eb95925f4e7346a9216f8ef4_1
+uncultured soil bacterium; environmental samples
+>70bb12572550a45fd4dca880ddda9fa9_1
+uncultured soil bacterium; environmental samples
+>14f7b538aadde211a2f0042c42d141de_1
+uncultured bacterium; environmental samples
+>ed4ff2f6e716e1da1ec43caac9572bfe_1
+uncultured soil bacterium; environmental samples
+>2797befb3ad3f2f94147bb686ed5aedf_1
+uncultured bacterium; environmental samples
+>a0108f262b8bd4b2eb55ddf2959f7aed_1
+uncultured bacterium; environmental samples
+>eb45edf0f486d8868426b495ca86b391_1
+uncultured bacterium; environmental samples
+>f6842f9f4f6e3893bdb06702125df2a5_1
+uncultured bacterium; environmental samples
+>8051ffd3644847b2d16f921da141efdf_1
+Burkholderiales bacterium JOSHI_001; Burkholderiales
+>96594ce192158ac423158251fef216bf_1
+uncultured bacterium; environmental samples
+>974d3a93503cf30c4b19079c0295e270_1
+uncultured bacterium; environmental samples
+>564aa4409641dcacbb5eb07e02d5ad7e_1
+uncultured denitrifying bacterium; environmental samples
+>2d125b872deacd206edf48bfd8a7d0d6_1
+uncultured denitrifying bacterium; environmental samples
+>2e2548d6911b7bda760b0a2fd0158177_1
+uncultured bacterium; environmental samples
+>c1149417a8eb778c4e1dc5b65821b4c3_1
+uncultured bacterium; environmental samples
+>cc8879fe835e4c1479f6098beb0b223a_1
+uncultured bacterium; environmental samples
+>c7d5f0a3a5286f47337b357f047ed097_1
+uncultured bacterium; environmental samples
+>4b86d998f1615526b05993c2dc053053_1
+uncultured bacterium; environmental samples
+>dd7a2e1105c78a9ae1685185d54765a2_1
+uncultured bacterium; environmental samples
+>cdc1fa1e163b22c1ae11b929d9a3936e_1
+uncultured prokaryote; environmental samples
+>69b900f045e32f8c89759e25fccc71fb_1
+uncultured bacterium; environmental samples
+>8d41e7016978c628e00e1b91bf0b82d5_1
+uncultured prokaryote; environmental samples
+>c81919f9568a32cd8d74e15adba9e67e_1
+uncultured bacterium; environmental samples
+>fa25d145a8b81961320316cd4177d036_1
+uncultured bacterium; environmental samples
+>6a8e22aaefc92d508bb90619b4889428_1
+uncultured bacterium; environmental samples
+>72ac7a9ada325918055a68ad12ffb69a_1
+uncultured bacterium; environmental samples
+>a6ebefe3b79abd3e792ccb520aa1da20_1
+uncultured bacterium; environmental samples
+>f94c607826488fbcfe0c77e740785d4b_1
+uncultured bacterium; environmental samples
+>7e84d60934780b65a283121c3fd08949_1
+uncultured bacterium; environmental samples
+>360027522bd7a930e8025d00a3c6d0bd_1
+uncultured bacterium; environmental samples
+>ccb7f70e0d446b710443dba02ad1aefc_1
+uncultured bacterium; environmental samples
+>a334109dcef506ba1923ffbadcfd3e2f_1
+uncultured organism; environmental samples
+>3a85239cb0d924c77285c7a0fda7d5da_1
+uncultured bacterium; environmental samples
+>ebabf63df83f0569dfb777185f586335_1
+uncultured bacterium; environmental samples
+>bec97e2cf4f2931bfb996c7411f3bafa_1
+uncultured bacterium; environmental samples
+>af4387852ead81b714085c0beb1473ff_1
+uncultured organism; environmental samples
+>105dc7e4ced98c52dded9f78a9546594_1
+uncultured bacterium; environmental samples
+>20862b667b26a2a04544e43dc6c0c659_1
+uncultured bacterium; environmental samples
+>c3dc58f3fe24aa62810726d3bc3ed588_1
+uncultured bacterium; environmental samples
+>18035b51ed8da822656852df99c04caf_1
+uncultured bacterium; environmental samples
+>98940eed0962698eb9f5815c708388ef_1
+uncultured bacterium; environmental samples
+>ac0be5eb3c7b03649e1f8fa72b8f28b6_1
+uncultured bacterium; environmental samples
+>041fd0f8457637e75a12e7882a7da426_1
+uncultured denitrifying bacterium; environmental samples
+>07be2cb4a28e3065bd9400f160891143_1
+uncultured denitrifying bacterium; environmental samples
+>5545379b9f645f55c6486f9f9d1fc9e5_1
+uncultured denitrifying bacterium; environmental samples
+>099d1ef280be00400d392e41d4046955_1
+uncultured bacterium; environmental samples
+>d835f0a06c4ff7cbe22c700621eb01a7_1
+uncultured bacterium; environmental samples
+>3a6889d75b381aa824eb2375101561bb_1
+uncultured bacterium; environmental samples
+>a9a563e3a4eb317d45edddeec571579c_1
+uncultured bacterium; environmental samples
+>3664b4203237564d5b53f50cf383facb_1
+uncultured bacterium; environmental samples
+>4003e6beb3df71bf9ec6b8543d283747_1
+uncultured bacterium; environmental samples
+>097d03f27c19dca1d6a5c09bfd8ce0c7_1
+uncultured soil bacterium; environmental samples
+>af38b37d27a28bb485535ea74d047e4b_1
+uncultured bacterium; environmental samples
+>70c53cf6cfc404159583d15ee154b33e_1
+uncultured bacterium; environmental samples
+>89a344f7274f9e7fd91df6e1ad6a4cf3_1
+uncultured bacterium; environmental samples
+>0dfebac96a565f7c21386c861bae464f_1
+uncultured bacterium; environmental samples
+>1c04adbc94b6a0a85025cdf31c7e0725_1
+uncultured bacterium; environmental samples
+>8ce1f338e606ce836304032bb1ffc554_1
+uncultured soil bacterium; environmental samples
+>9b450bbdc9902ff194d6d95314e09d2c_1
+uncultured bacterium; environmental samples
+>1bf3986e538fa44c30de43ac972394d1_2
+uncultured bacterium; environmental samples
