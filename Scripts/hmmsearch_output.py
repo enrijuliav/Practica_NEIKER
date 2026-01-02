@@ -1,5 +1,4 @@
 import re
-import pprint
 from Bio import Entrez
 
 def parse_gene(file: str, gene: str) -> dict[str, list[str]]:
@@ -159,18 +158,18 @@ def extract_NIH_ID(file: str, mail: str) -> tuple[dict[str, str],dict[str, list[
 
 ######################################################################################################################
 
-outnirK = parse_gene("PHMMER/hmmbuild_out_nirK.txt", "nirK")
-outnirS = parse_gene("PHMMER/hmmbuild_out_nirS.txt", "nirS")
+outnirK = parse_gene("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/PHMMER/hmmbuild_out_nirK.txt", "nirK")
+outnirS = parse_gene("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/PHMMER/hmmbuild_out_nirS.txt", "nirS")
 
-""" protnirK = prepare_db("Prot_database/nirK_prot_annot.fasta")
-protnirS = prepare_db("Prot_database/nirS_prot_annot.fasta") """
+""" protnirK = prepare_db("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Raw_data/HMM/Prot_database/nirK_prot_annot.fasta")
+protnirS = prepare_db("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Raw_data/HMM/Prot_database/nirS_prot_annot.fasta") """
 
-transeqs = parse_seqs("transeq-otu-seqs.fasta")
+transeqs = parse_seqs("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/transeq-otu-seqs.fasta")
 
 write_phmmer("nirK", outnirK, transeqs)
 write_phmmer("nirS", outnirS, transeqs)
 
-""" phmmernirK = extract_NIH_ID("nirK_phmmer.txt", "enrijuliav@gmail.com")
+""" phmmernirK = extract_NIH_ID("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/nirK_phmmer.txt", "enrijuliav@gmail.com")
 print(phmmernirK[0])
 print(phmmernirK[1])
 
@@ -198,7 +197,7 @@ with open("genus_nirS.txt", "w") as f:
         f.write(f">{ID}\n")
         f.write("; ".join(phmmernirS[1][ID])+"\n") """
 
-with open("nirS_phmmer.txt") as f:
+with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/phmmer_nirS.txt") as f:
         doc = f.read()
 
 seqs = re.split("Query: +", doc)[1:]
