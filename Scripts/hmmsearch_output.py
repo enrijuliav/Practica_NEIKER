@@ -200,12 +200,17 @@ with open("genus_nirS.txt", "w") as f:
         f.write(f">{ID}\n")
         f.write("; ".join(genus_nirS[ID])+"\n") """
 
-with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/phmmer_nirS.txt") as f:
-        doc = f.read()
 
-seqs = re.split("Query: +", doc)[1:]
+""" with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/feature-table.tsv") as f:
+    doc = f.read()
 
-for alignment in seqs:
-    seq = re.match(r"[a-z0-9_]{34}", alignment).group()
-    ID = re.search(r"-{11}\n.*([A-Z]{3}[0-9]{5}.[0-9]).*\n",alignment).groups()[0]
-    print(seq, re.search(r"-{11}\n(.*)\n(.*)\n(.*)\n(.*)\n",alignment).groups()[1])
+with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirS.txt") as f:
+    doc = f.read() """
+
+with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirK.txt") as f:
+    doc = f.read()
+
+print(doc.split(">")[1:])
+for seq in doc.split(">")[1:]:
+    print(seq.split("\n")[:-1])
+    print(seq.split("\n")[-2].split(";")[-1].strip())
