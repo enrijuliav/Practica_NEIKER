@@ -1,5 +1,6 @@
 import re
 from Bio import Entrez
+import pandas as pd
 
 def parse_gene(file: str, gene: str) -> dict[str, list[str]]:
     """
@@ -209,15 +210,41 @@ if __name__ == "__main__":
     with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirS.txt") as f:
         doc = f.read()
 
-
+    nirS_results = {}
     for seq in doc.split(">")[1:]:
-        print(seq.split("\n")[0].split("_")[0])
-        print(seq.split("\n")[-2].split(";")[-1].strip())
+        ID = seq.split("\n")[0].split("_")[0]
+        genus = seq.split("\n")[-2].split(";")[-1].strip()
+        nirS_results[ID] = genus
 
     with open("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/results_hmm/genus_nirK.txt") as f:
         doc = f.read()
 
-
+    nirK_results = {}
     for seq in doc.split(">")[1:]:
-        print(seq.split("\n")[0].split("_")[0])
-        print(seq.split("\n")[-2].split(";")[-1].strip())
+        ID = seq.split("\n")[0].split("_")[0]
+        genus = seq.split("\n")[-2].split(";")[-1].strip()
+        nirK_results[ID] = genus
+
+    dataframe = pd.read_csv("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/feature-table.tsv", sep="\t")
+    allIDs = dataframe["#OTU ID"].to_list()
+    print(all([name in allIDs for name in list(nirK_results.keys())]))
+    print(all([name in allIDs for name in list(nirS_results.keys())]))
+    nirS = []
+    nirK = []
+    for name in allIDs:
+        if name in nirS_results:
+            nirS.append(nirS_results[name])
+        else:
+            nirS.append("Unclassified")
+
+        if name in nirK_results:
+            nirK.append(nirK_results[name])
+        else:
+            nirK.append("Unclassified")
+
+    print(nirS)
+    print(nirK)
+
+    dataframe.insert(1, "nirS", nirS)
+    dataframe.insert(2, "nirK", nirK)
+    print(dataframe)

@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{graphicx}
-
+\usepackage{hyperref}
+\usepackage{listings}
 
 \begin{document}
 
@@ -18,7 +19,9 @@ A la hora de descargar los datos necesarios de las pocas bases de datos existent
 
 Los datos procesados están mal presentados,un poco una chapuza, hay estadísticos incoherentes, pvalores sin sentido, columnas repetidas, datos mal estructurados. Los métodos están explicados regular, es dificil asociar un método con unos datos, las figuras mezclan diferentes resultados y no los describen correctamente en los pies de figura.
 
-En el desarrollo de métodos, no se informa de los parámetros empleados en QIIME2. Además, 
+En el desarrollo de métodos, no se informa de los parámetros empleados en QIIME2. Además, falta mucha información del protocolo empleado realmente. Esto dificulta bastante la replicabilidad. Sobre todo, es bastante perjudicial la disponibilidad de los datos que dan. No todos los datos crudos están presentados, y los que si son accesibles tienen nombres poco intuitivos. Puede ser que para ellos se entienda bien de donde salen y para que se han empleado, pero para cualquier persona que no conozca suficiente, como es el caso, y esté intentando replicar los datos, dichos nombres le resultan confusos y contradicen la información expresada en el paper o la información suplementaria.
+
+Mi opinión final, es que este proceso ha sido complicado, principalmente por la elección de paper. Pese a que a primera vista parecía un paper sencillamente replicable, bien explicado y accesible, con toda la información disponible. Conforme hemos ido avanzando hemos visto que han surgido bastantes dificultades, pero por una perspectiva de \textit{"sunken cost"} ha llegado un momento en el que no queríamos volver a empezar. Considero que, para una persona que domine el campo y conozca bien la metodología y tenga interiorizados los básicos, este paper resultaría mucho más sencillo de entender y replicar. Pero al entrar con conocimientos muy básicos de algunos temas, aprendidos en el máster, considero que este paper realiza un mal trabajo a la hora de presentar sus datos de una manera accesible y sus métodos de una manera replicable. Falta información explícita, los nombres son contradictorios, se dan muchas cosas por asumidas, lo que dificulta enormemente su estudio.
 
 \section{Article:}
 
@@ -100,10 +103,24 @@ We tried studying the outliers, to ensure that we were not considering some data
 
 Besides, we realized that the authors did not thought about the multiple testing effect on the significance of the results. In the 5B Figure analysis a total of 18 test were performed, which, because of the nature of this tests, would lead to at least 1 of them being a false positive. Given the characteristics of this analysis performing Bonferroni correction would be too restrictive of a test for our necessities. In this case, we proposed the use of False Discovery Rate correction
 
-QUIIME2:
-
-qiime tools import  --type 'SampleData[SequencesWithQuality]'  --input-path nirS-fq-manifest.tsv  --output-path demux.qza  --input-format SingleEndFastqManifestPhred33V2
+QUIIME2 (Galaxy): \url{https://usegalaxy.eu/u/enrique_julia/w/qiime2neikervf}
 
 
+Python/Bash:
+
+\begin{lstlisting}[language=Python, caption=Python example]
+import numpy as np
+    
+def incmatrix(genl1,genl2):
+    m = len(genl1)
+    n = len(genl2)
+    M = None #to become the incidence matrix
+    VT = np.zeros((n*m,1), int)  #dummy variable
+    
+    #compute the bitwise xor matrix
+    M1 = bitxormatrix(genl1)
+\end{lstlisting}
+
+Replication of statystical analysis
 
 \end{document}
