@@ -9,26 +9,23 @@ library(ggpubr)
 
 load1B <- function(csv) {
   # Load data
-  data <- read.csv(csv)
+  data <- read.csv2(csv)
   # Change colnames
-  colnames(data) <- data[1,]
-  data <- data[-1,]
-  data$`Soil type` <- as.factor(data$`Soil type`)
-  data$Treatment <- as.factor(data$Treatment)
-  data$Time <- as.numeric(gsub("day","",data$Time))
-  data$Replicate <- as.numeric(data$Replicate)
-  data$nirS <- as.numeric(gsub(",",".",data$nirS))
-  data$nirK <- as.numeric(gsub(",",".",data$nirK))
-  data$`log(nirS)` <- log10(data$nirS)
-  data$`log(nirK)` <- log10(data$nirK)
+  data <- data[c("MBC","DR", "MOA","nirK.gene.abundance", "nirS.gene.abundance", "pmoA.gene.abundance")]
+  data$MBC <- as.numeric(gsub(",",".", gsub("\\.","", data$MBC)))
+  data$nirK.gene.abundance <- as.numeric(gsub(",",".", gsub("\\.","", data$nirK.gene.abundance)))
+  data$nirS.gene.abundance <- as.numeric(gsub(",",".", gsub("\\.","", data$nirS.gene.abundance)))
+  data$pmoA.gene.abundance <- as.numeric(gsub(",",".", gsub("\\.","", data$pmoA.gene.abundance)))
   return(data)
 }
 
-rawdata <- load3B("Raw_data/MD1B_rawdata.csv")
+rawdata <- load1B("Raw_data/MD1B_rawdata.csv")
 
-# Select the variables for the analysis: Soil type and metabolites
-soiltypes <- unique(rawdata[["Soil type"]])
-genes <- grep("^log", colnames(rawdata), value = T)
+
+#######################################################################
+#-----------------------------Estadística-----------------------------#
+#######################################################################
+
 
 # Initialize an object that will have all the stat results
 stats <- rep(NA, 0)
@@ -38,15 +35,15 @@ pvalues <- rep(NA, 0)
 for (soil in soiltypes) {
   for (gene in genes) {
     # Select only the data of our interest
-    example <- rawdata[rawdata["Soil type"]==soil, c("Treatment",gene)]
+    example <- rawdata[rawdata["Soil type"] == soil, c("Treatment", gene)]
     # ANOVA test
     result <- aov(example[[gene]] ~ Treatment, data = example)
     # Save the general ANOVA pvalue
-    pvalues <- append(pvalues,summary(result)[[1]]["Pr(>F)"][1,])
+    pvalues <- append(pvalues, summary(result)[[1]]["Pr(>F)"][1, ])
     # Extract the values for every posible combination of treatments in one set of conditions
     temp <- as.data.frame(TukeyHSD(result)[[1]])
     colnames(temp) <- sub("", paste(soil, gene), colnames(temp))
-    temp<- round(temp, digits = 3)
+    temp <- round(temp, digits = 3)
     stats <- append(stats, temp[4])
   }
 }
@@ -66,22 +63,20 @@ write.csv(stats, file = "Processed_data/stats2B")
 #######################################################################
 
 
-graph <- rawdata[c("Soil type", "Treatment", "log(nirS)", "log(nirK)")]
-nirs <- cbind(rep("nirS", length(graph[graph$`Soil type`=="Black soil",1])),
-              graph[graph$`Soil type`=="Black soil",c(2,3,1)],
-              graph[graph$`Soil type`=="Red soil",c(3,1)],
-              graph[graph$`Soil type`=="Yellow soil",c(3,1)])
-colnames(nirs) <- c("group","Treatment", "genes_B","Black","genes_R","Red","genes_Y","Yellow")
+# Calculate de natural logarithm of the gas/genes divided by the biomass
+gases <- log(rawdata[c("DR","MOA")]/rawdata$MBC)
+genes <- log(rawdata[c("nirK.gene.abundance", "nirS.gene.abundance", "pmoA.gene.abundance")]/rawdata$MBC)
 
-nirk <- cbind(rep("nirK", length(graph[graph$`Soil type`=="Black soil",1])),
-              graph[graph$`Soil type`=="Black soil",c(2,4,1)],
-              graph[graph$`Soil type`=="Red soil",c(4,1)],
-              graph[graph$`Soil type`=="Yellow soil",c(4,1)])
-colnames(nirk) <- c("group","Treatment","genes_B","Black","genes_R","Red","genes_Y","Yellow")
+# Reformatting
+genesK <- cbind(rep("nirK", nrow(genes)),genes[c("nirK.gene.abundance", "pmoA.gene.abundance")])
+colnames(genesK) <- c("group", "gene", "pmoA")
+genesS <- cbind(rep("nirS", nrow(genes)),genes[c("nirS.gene.abundance", "pmoA.gene.abundance")])
+colnames(genesS) <- c("group", "gene", "pmoA")
 
-plot <- rbind(nirs,nirk)
-plot$group <- as.factor(plot$group)
-plot$Treatment <- factor(plot$Treatment, c("CT", "CT_N", "0.01% CH4 _N", "0.1% CH4 _N", "1% CH4 _N"))
+genes <- rbind(genesK, genesS)
+
+nirKmask <- genes$group=="nirK"
+nirSmask <- genes$group=="nirS"
 
 
 ####################################################################
@@ -89,93 +84,57 @@ plot$Treatment <- factor(plot$Treatment, c("CT", "CT_N", "0.01% CH4 _N", "0.1% C
 ####################################################################
 
 
-bA<-ggplot(plot, aes(fill=Treatment, y=genes_B, x=group))+
-  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black")+
-  theme_classic(base_size = 12)+
-  theme(panel.border=element_rect(fill='transparent',linewidth=0.5),
-        text = element_text(family = "C",size = 18, colour = "black"))+
-  geom_vline(aes(xintercept=1.5),linetype=2,cex=2)+
-  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
-               width = 0.2,position = position_dodge(1))+
-  theme(legend.direction = "horizontal", legend.position = "none")+
-  labs(title = "", y="Gene copies·g⁻¹soil (RNA, log₁₀)", x = "")+
-  theme(axis.text.y.right = element_blank(),
-        axis.ticks.y.right = element_blank())+
-  theme(axis.text.x = element_text(size = 18))+
-  theme(axis.text.y = element_text(size = 18))+
-  theme(axis.title = element_text(size = 18))+
-  scale_fill_manual(values = c('#ffffff','#dae1ff','#9faaff','#5a71ff','#2a2aff')) +
-  facet_grid(~ Black, scale="free",space="free_y")+
+p1<-ggplot(gases,aes(x=MOA, y=DR, fill = T))+
+  geom_point(size=4,pch=21)+
+  scale_color_manual(values = c('#000000'))+
+  scale_fill_manual(values = c('#6393FB'))+
+  scale_y_continuous(limits = c(-8,0),breaks = c(-8,-4,0))+
+  scale_x_continuous(limits = c(-8,-1),breaks = c(-8,-6,-4,-2))+
+  theme_bw() +
+  theme(legend.position = "none") +
+  geom_smooth(method='lm', aes(colour = "black")) +
+  theme(panel.grid.major=element_line(colour=NA),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA),
+        panel.grid.minor = element_blank()) +
+  labs(title = "", y="DR (Ln-transformed,\nnmol ¹⁵N h⁻· µg⁻¹ biomass-C)", x = "MOA (Ln-transformed,\nµg CH₄ h⁻· µg⁻¹·biomass-C)") +
+  theme(axis.text.x = element_text(size = 18, colour = "black"),
+        axis.ticks.x = element_line(colour = "black", size = 0.68)) +
+  theme(axis.text.y = element_text(size = 18, colour = "black"),
+        axis.ticks.y = element_line(colour = "black", size = 0.68)) +
+  theme(axis.title = element_text(size = 18, colour = "black"))+
   theme(strip.text = element_text(size = 18),
-        strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7))+
-  geom_jitter(data = plot, aes(x = group, y = genes_B,color="black"),shape=21,color='black',
-              position = position_jitterdodge(jitter.height=0.1,
-                                              jitter.width = 0.2,
-                                              dodge.width = 1,
-                                              seed = 12345),
-              size = 2, alpha = 0.8,show.legend = F) +
-  ylim(0, 8)
+        strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7)) +
+  annotate("label", x=-7.8, y=-0.5, label=paste("R²=",round(summary(lm(gases$DR ~ gases$MOA))[["r.squared"]], 2)))
+p1
 
-bA
 
-bB<-ggplot(plot, aes(fill=Treatment, y=genes_R, x=group))+
-  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black")+
-  theme_classic(base_size = 12)+
-  theme(panel.border=element_rect(fill='transparent',linewidth=0.5),
-        text = element_text(family = "C",size = 18, colour = "black"))+
-  geom_vline(aes(xintercept=1.5),linetype=2,cex=2)+
-  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
-               width = 0.2,position = position_dodge(1))+
-  theme(legend.direction = "horizontal", legend.position = "top")+
-  labs(title = "", y="", x = "")+
-  theme(axis.text.y.right = element_blank(),
-        axis.ticks.y.right = element_blank())+
-  theme(axis.text.x = element_text(size = 18))+
-  theme(axis.text.y = element_text(size = 18))+
-  theme(axis.title = element_text(size = 18))+
-  scale_fill_manual(values = c('#ffffff','#dae1ff','#9faaff','#5a71ff','#2a2aff')) +
-  facet_grid(~ Red, scale="free",space="free_y")+
+
+
+p2<-ggplot(genes,aes(x=pmoA, y=gene, fill = group)) +
+  geom_point(size=4,pch=21) +
+  scale_color_manual(values = c('#000000', "#000000")) +
+  scale_y_continuous(limits = c(4,17.5),breaks = c(4, 8, 12, 16)) +
+  scale_x_continuous(limits = c(8.5, 15),breaks = c(9, 11, 13, 15)) +
+  theme_bw() +
+  theme(legend.position = c(0.055, 0.88), legend.title=element_blank()) +
+  geom_smooth(method='lm', color = c("black")) +
+  theme(panel.grid.major=element_line(colour=NA),
+        panel.background = element_rect(fill = "transparent",colour = NA),
+        plot.background = element_rect(fill = "transparent",colour = NA),
+        panel.grid.minor = element_blank()) +
+  labs(title = "", y = "Gene copies·µg⁻¹ biomass-C \n(Ln-transformed)", x = "pmoA gene copies·µg⁻¹ biomass-C\n(Ln-transformed)") +
+  theme(axis.text.x = element_text(size = 18, colour = "black"),
+        axis.ticks.x = element_line(colour = "black", size = 0.68)) +
+  theme(axis.text.y = element_text(size = 18, colour = "black"),
+        axis.ticks.y = element_line(colour = "black", size = 0.68)) +
+  theme(axis.title = element_text(size = 18, colour = "black"))+
   theme(strip.text = element_text(size = 18),
-        strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7))+
-  geom_jitter(data = plot, aes(x = group, y = genes_R,color="black"),shape=21,color='black',
-              position = position_jitterdodge(jitter.height=0.1,
-                                              jitter.width = 0.2,
-                                              dodge.width = 1,
-                                              seed = 12345),
-              size = 2, alpha = 0.8,show.legend = F) +
-  ylim(0, 8)
+        strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7)) +
+  annotate("label", x=9.4, y=17, label=paste("nirK R²=",round(summary(lm(genes$gene[nirKmask] ~ genes$pmoA[nirKmask]))[["r.squared"]], 2))) +
+  annotate("label", x=9.4, y=16, label=paste("nirS R²=",round(summary(lm(genes$gene[nirSmask] ~ genes$pmoA[nirSmask]))[["r.squared"]], 2))) 
+p2
 
-bB
+ggarrange(p1,p2,ncol=1,nrow=2)
 
-bC<-ggplot(plot, aes(fill=Treatment, y=genes_Y, x=group))+
-  geom_bar(position=position_dodge(1),stat="summary",width=0.7,colour = "black")+
-  theme_classic(base_size = 12)+
-  theme(panel.border=element_rect(fill='transparent',linewidth=0.5),
-        text = element_text(family = "C",size = 18, colour = "black"))+
-  geom_vline(aes(xintercept=1.5),linetype=2,cex=2)+
-  stat_summary(fun.data = 'mean_se', geom = "errorbar", colour = "black",
-               width = 0.2,position = position_dodge(1))+
-  theme(legend.direction = "horizontal", legend.position = "none")+
-  labs(title = "", y="", x = "")+
-  theme(axis.text.y.right = element_blank(),
-        axis.ticks.y.right = element_blank())+
-  theme(axis.text.x = element_text(size = 18))+
-  theme(axis.text.y = element_text(size = 18))+
-  theme(axis.title = element_text(size = 18))+
-  scale_fill_manual(values = c('#ffffff','#dae1ff','#9faaff','#5a71ff','#2a2aff')) +
-  facet_grid(~ Yellow, scale="free",space="free_y")+
-  theme(strip.text = element_text(size = 18),
-        strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7))+
-  geom_jitter(data = plot, aes(x = group, y = genes_Y,color="black"),shape=21,color='black',
-              position = position_jitterdodge(jitter.height=0.1,
-                                              jitter.width = 0.2,
-                                              dodge.width = 1,
-                                              seed = 12345),
-              size = 2, alpha = 0.8,show.legend = F) +
-  ylim(0, 8)
-
-bC
-
-ggarrange(bA,bB,bC,ncol=3,nrow=1, common.legend = TRUE, legend="top")
-
-# Save with 1600*600 resolution
+# Save with 900*1100 resolution
