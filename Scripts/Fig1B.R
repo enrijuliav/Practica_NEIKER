@@ -27,35 +27,35 @@ rawdata <- load1B("Raw_data/MD1B_rawdata.csv")
 #######################################################################
 
 
-# Initialize an object that will have all the stat results
-stats <- rep(NA, 0)
-pvalues <- rep(NA, 0)
-
-# Cycle through every soil type and metabolite
-for (soil in soiltypes) {
-  for (gene in genes) {
-    # Select only the data of our interest
-    example <- rawdata[rawdata["Soil type"] == soil, c("Treatment", gene)]
-    # ANOVA test
-    result <- aov(example[[gene]] ~ Treatment, data = example)
-    # Save the general ANOVA pvalue
-    pvalues <- append(pvalues, summary(result)[[1]]["Pr(>F)"][1, ])
-    # Extract the values for every posible combination of treatments in one set of conditions
-    temp <- as.data.frame(TukeyHSD(result)[[1]])
-    colnames(temp) <- sub("", paste(soil, gene), colnames(temp))
-    temp <- round(temp, digits = 3)
-    stats <- append(stats, temp[4])
-  }
-}
-
-padj <- round(p.adjust(pvalues, method = "fdr"), digits = 3)
-padj < 0.05
-
-stats <- as.data.frame(stats)
-stats <- rbind(stats, padj)
-rownames(stats) <- c(rownames(temp), "p_adj")
-
-write.csv(stats, file = "Processed_data/stats2B")
+# # Initialize an object that will have all the stat results
+# stats <- rep(NA, 0)
+# pvalues <- rep(NA, 0)
+# 
+# # Cycle through every soil type and metabolite
+# for (soil in soiltypes) {
+#   for (gene in genes) {
+#     # Select only the data of our interest
+#     example <- rawdata[rawdata["Soil type"] == soil, c("Treatment", gene)]
+#     # ANOVA test
+#     result <- aov(example[[gene]] ~ Treatment, data = example)
+#     # Save the general ANOVA pvalue
+#     pvalues <- append(pvalues, summary(result)[[1]]["Pr(>F)"][1, ])
+#     # Extract the values for every posible combination of treatments in one set of conditions
+#     temp <- as.data.frame(TukeyHSD(result)[[1]])
+#     colnames(temp) <- sub("", paste(soil, gene), colnames(temp))
+#     temp <- round(temp, digits = 3)
+#     stats <- append(stats, temp[4])
+#   }
+# }
+# 
+# padj <- round(p.adjust(pvalues, method = "fdr"), digits = 3)
+# padj < 0.05
+# 
+# stats <- as.data.frame(stats)
+# stats <- rbind(stats, padj)
+# rownames(stats) <- c(rownames(temp), "p_adj")
+# 
+# write.csv(stats, file = "Processed_data/stats2B")
 
 
 #######################################################################
