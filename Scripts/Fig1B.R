@@ -23,42 +23,6 @@ rawdata <- load1B("Raw_data/MD1B_rawdata.csv")
 
 
 #######################################################################
-#-----------------------------Estadística-----------------------------#
-#######################################################################
-
-
-# # Initialize an object that will have all the stat results
-# stats <- rep(NA, 0)
-# pvalues <- rep(NA, 0)
-# 
-# # Cycle through every soil type and metabolite
-# for (soil in soiltypes) {
-#   for (gene in genes) {
-#     # Select only the data of our interest
-#     example <- rawdata[rawdata["Soil type"] == soil, c("Treatment", gene)]
-#     # ANOVA test
-#     result <- aov(example[[gene]] ~ Treatment, data = example)
-#     # Save the general ANOVA pvalue
-#     pvalues <- append(pvalues, summary(result)[[1]]["Pr(>F)"][1, ])
-#     # Extract the values for every posible combination of treatments in one set of conditions
-#     temp <- as.data.frame(TukeyHSD(result)[[1]])
-#     colnames(temp) <- sub("", paste(soil, gene), colnames(temp))
-#     temp <- round(temp, digits = 3)
-#     stats <- append(stats, temp[4])
-#   }
-# }
-# 
-# padj <- round(p.adjust(pvalues, method = "fdr"), digits = 3)
-# padj < 0.05
-# 
-# stats <- as.data.frame(stats)
-# stats <- rbind(stats, padj)
-# rownames(stats) <- c(rownames(temp), "p_adj")
-# 
-# write.csv(stats, file = "Processed_data/stats2B")
-
-
-#######################################################################
 #-----------------------------Preparación-----------------------------#
 #######################################################################
 
@@ -77,6 +41,31 @@ genes <- rbind(genesK, genesS)
 
 nirKmask <- genes$group=="nirK"
 nirSmask <- genes$group=="nirS"
+
+
+#######################################################################
+#-----------------------------Estadística-----------------------------#
+#######################################################################
+
+
+pval_gases <- summary(lm(DR ~ MOA, data = gases))[["coefficients"]][8]
+pval_genesK <- summary(lm(gene ~ pmoA, data = genes[nirKmask,]))[["coefficients"]][8]
+pval_genesS <- summary(lm(gene ~ pmoA, data = genes[nirSmask,]))[["coefficients"]][8]
+
+pval_symbol <- function(pval) {
+  # Returns the corresponding symbol depending on the pval
+  return(ifelse(pval < 0.01, "**", ifelse(pval < 0.05, "*", "")))
+}
+
+symbol_gases <- pval_symbol(pval_gases)
+symbol_genesK <- pval_symbol(pval_genesK)
+symbol_genesS <- pval_symbol(pval_genesS)
+
+
+stats <- data.frame(regression = c("MOA vs DR", "nirK vs pmoA", "nirS vs pmoA"),
+                    pval = c(pval_gases, pval_genesK, pval_genesS))
+
+write.csv(stats, file = "Processed_data/stats1B")
 
 
 ####################################################################
@@ -105,7 +94,8 @@ p1<-ggplot(gases,aes(x=MOA, y=DR, fill = T))+
   theme(axis.title = element_text(size = 18, colour = "black"))+
   theme(strip.text = element_text(size = 18),
         strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7)) +
-  annotate("label", x=-7.8, y=-0.5, label=paste("R²=",round(summary(lm(gases$DR ~ gases$MOA))[["r.squared"]], 2)))
+  annotate("label", x=-7.8, y=-0.5,
+           label=paste("R²=",round(summary(lm(gases$DR ~ gases$MOA))[["r.squared"]], 2), symbol_gases))
 p1
 
 
@@ -131,8 +121,10 @@ p2<-ggplot(genes,aes(x=pmoA, y=gene, fill = group)) +
   theme(axis.title = element_text(size = 18, colour = "black"))+
   theme(strip.text = element_text(size = 18),
         strip.background = element_rect(fill="#d9d9d9", colour="black", size=0.7)) +
-  annotate("label", x=9.4, y=17, label=paste("nirK R²=",round(summary(lm(genes$gene[nirKmask] ~ genes$pmoA[nirKmask]))[["r.squared"]], 2))) +
-  annotate("label", x=9.4, y=16, label=paste("nirS R²=",round(summary(lm(genes$gene[nirSmask] ~ genes$pmoA[nirSmask]))[["r.squared"]], 2))) 
+  annotate("label", x=9.4, y=17,
+           label=paste("nirK R²=",round(summary(lm(genes$gene[nirKmask] ~ genes$pmoA[nirKmask]))[["r.squared"]], 2), symbol_genesK)) +
+  annotate("label", x=9.4, y=16,
+           label=paste("nirS R²=",round(summary(lm(genes$gene[nirSmask] ~ genes$pmoA[nirSmask]))[["r.squared"]], 2), symbol_genesS)) 
 p2
 
 ggarrange(p1,p2,ncol=1,nrow=2)

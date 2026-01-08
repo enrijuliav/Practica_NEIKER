@@ -227,8 +227,6 @@ if __name__ == "__main__":
 
     dataframe = pd.read_csv("/home/enrijuliav/Documentos/GitHub/Practica_NEIKER/Processed_data/HMM/feature-table.tsv", sep="\t")
     allIDs = dataframe["#OTU ID"].to_list()
-    print(all([name in allIDs for name in list(nirK_results.keys())]))
-    print(all([name in allIDs for name in list(nirS_results.keys())]))
     nirS = []
     nirK = []
     for name in allIDs:
@@ -242,9 +240,5 @@ if __name__ == "__main__":
         else:
             nirK.append("Unclassified")
 
-    print(nirS)
-    print(nirK)
-
-    dataframe.insert(1, "nirS", nirS)
-    dataframe.insert(2, "nirK", nirK)
-    print(dataframe)
+    print("nirK:",set(nirK))
+    print("nirS:",set(nirS))
