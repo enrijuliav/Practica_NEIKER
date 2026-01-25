@@ -24,7 +24,7 @@ load2B <- function(csv) {
   return(data)
 }
 
-rawdata <- load3B("Raw_data/MD2B_rawdata.csv")
+rawdata <- load2B("Raw_data/MD2B_rawdata.csv")
 
 # Select the variables for the analysis: Soil type and metabolites
 soiltypes <- unique(rawdata[["Soil type"]])
